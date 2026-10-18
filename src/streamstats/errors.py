@@ -6,18 +6,18 @@ class StreamStatsError(Exception):
 
 
 class WrongFormat(StreamStatsError):
-    def __init__(self):
-        super().__init__("Неверный формат")
+    def __init__(self, value):
+        super().__init__(f"Неверный формат {value}")
 
 
 class WrongEvent(StreamStatsError):
-    def __init__(self):
-        super().__init__("Неправильное событие")
+    def __init__(self, value):
+        super().__init__(f"Неправильное событие {value}")
 
 
 class WrongTimeFormat(StreamStatsError):
-    def __init__(self):
-        super().__init__("Неверная временная метка")
+    def __init__(self, value):
+        super().__init__(f"Неверная временная метка: {value}")
 
 
 class WrongCLIConfiguration(StreamStatsError):
