@@ -24,12 +24,12 @@ def parse_event(row: dict) -> dict:
         raise WrongFormat(f"source: {row['source']!r}")
 
     try:
-        dt = datetime.fromisoformat(row["timestamp"])
+        datetime.fromisoformat(row["timestamp"])
     except ValueError as exc:
         raise WrongTimeFormat(f"{row['timestamp']!r}") from exc
 
     return {
-        "timestamp": dt,
+        "timestamp": row["timestamp"],
         "level": row["level"],
         "source": row["source"],
         "message": row["message"],
