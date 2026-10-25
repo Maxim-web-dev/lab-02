@@ -24,3 +24,5 @@ venv/
 
 # OS-specific files
 .DS_Store
+
+report.json
